@@ -1,6 +1,7 @@
 <template>
 <div>
     <div id="main-content" class="blog-page">
+        
     <div class="container mb-5">
         <div class="row clearfix">
             <div class="col-lg-8 col-md-12 left-box">
@@ -50,7 +51,7 @@
                 </div>
                 <div class="card">
                     <div class="header row ml-2">   
-                        <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color:#fc5356">文章類別</h2>
+                        <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color: #0992a4;">文章類別</h2>
                     </div>
                     <TagTree class="ml-4" :TreeViewData2 = TreeViewData2 :TotalLogCardData="TotalLogCardData"></TagTree>
                    <!-- <TagAtticle :TreeViewData2 = TreeViewData2 :TotalLogCardData="TotalLogCardData"></TagAtticle> -->
@@ -68,7 +69,7 @@
                     </template>
                     </Teatree> -->
                 </div>
-                <div class="card">
+                <!-- <div class="card">
                     <div class="header">
                         <h2>Popular Posts</h2>                        
                     </div>
@@ -92,8 +93,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card">
+                </div> -->
+                <!-- <div class="card">
                     <div class="header">
                         <h2>Instagram Post</h2>
                     </div>
@@ -111,7 +112,7 @@
                             <li><a href="javascript:void(0);"><img src="https://via.placeholder.com/80x80/FFB6C1/000000" alt="image description"></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                     
                 <!-- <div class="card">
                     <div class="header">
@@ -637,7 +638,7 @@ img {
 .blog-aside .widget-title h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #fc5356;
+  color: #0992a4;
   margin: 0;
 }
 .blog-aside .widget-author .media {

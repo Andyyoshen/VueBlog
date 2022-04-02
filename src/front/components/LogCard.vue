@@ -4,7 +4,7 @@
                         <div class="img-post">
                             <img class="d-block img-fluid" style="width:800px;height:192px" :src="LogCardData.img_article_titlepage">
                         </div>
-                        <h3><a href="blog-details.html" style="color:#fc5356">{{LogCardData.title_article_titlepage}}</a></h3>
+                        <h3><a href="blog-details.html" style="color:#0992a4;">{{LogCardData.title_article_titlepage}}</a></h3>
                         <p>{{LogCardData.previewcontent_article_titlepage}}</p>
                         <!-- <p>sfsdf</p> -->
                     </div>

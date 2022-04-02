@@ -122,7 +122,7 @@
              <div class="card">
                     <div class="header">
                         <div class="header row">   
-                        <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color:#fc5356">文章類別</h2>
+                        <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color: #0992a4;">文章類別</h2>
                     </div>
                     </div>
                     <TagTree  class="ml-4" :TreeViewData2 = TreeViewData2 :TotalLogCardData="TotalLogCardData"></TagTree>
@@ -132,7 +132,7 @@
                     <div class="header">
                         <div class="header row">   
                      <!-- <h4 class="sidebar-title">最新文章</h4> -->
-                         <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color:#fc5356">最新文章</h2>
+                         <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color: #0992a4;">最新文章</h2>
                         <ul class="list-unstyled mt-5">
                             <li class="media my-4" v-for="(Article_Title_TopNews_result, index) in Article_Title_TopNews" :key="index">
                                 <img class="d-flex mr-3 img-fluid" width="64" :src="Article_Title_TopNews_result.img_article_titlepage" alt="Generic placeholder image">
