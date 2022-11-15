@@ -4,6 +4,7 @@
       :data="New_Tag_TreeView"
       v-model="test"
       @node:selected="onNodeSelected"
+      style="font-weight:bold;"
       
     />
 </template>

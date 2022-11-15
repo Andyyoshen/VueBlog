@@ -4,7 +4,7 @@
                         <div class="img-post">
                             <img class="d-block img-fluid" style="width:800px;height:192px" :src="LogCardData.img_article_titlepage">
                         </div>
-                        <h3><a href="blog-details.html" style="color:#0992a4;">{{LogCardData.title_article_titlepage}}</a></h3>
+                        <h3><a  style="color:#0992a4;">{{LogCardData.title_article_titlepage}}</a></h3>
                         <p>{{LogCardData.previewcontent_article_titlepage}}</p>
                         <!-- <p>sfsdf</p> -->
                     </div>
@@ -15,8 +15,8 @@
                         <ul class="stats">
                             <li><a href="javascript:void(0);" class="fa fa-tag">{{LogCardData.Name}}</a></li>
                             <li><a href="javascript:void(0);" class="fa fa-calendar">{{LogCardData.date_article_titlepage}}</a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-heart">28</a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-comment">128</a></li>
+                            <!-- <li><a href="javascript:void(0);" class="fa fa-heart">0</a></li>
+                            <li><a href="javascript:void(0);" class="fa fa-comment">0</a></li> -->
                         </ul>
                     </div>
         </div>                                  
@@ -31,8 +31,14 @@ export default {
     props:['LogCardData'],
     data(){
         return {
-       
+            Clientip:{
+                IpAddress:null,
+                article_titlepage_id:null
+            }
         }
+    },
+    created(){
+
     },
   mounted(){
       
@@ -44,7 +50,7 @@ export default {
       Into:function(data){
           this.$store.commit('ChangArticle',data)
           this.$router.push({path:'/Article_content'})
-      }
+      },
     // aa: function(){
     //     this.
     //     //alert("d")
@@ -90,13 +96,13 @@ beforeDestroy () {
 }
 
 .single_post .img-post:hover img {
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-    transform: scale(1.02);
-    opacity: .7;
-    filter: gray;
-    -webkit-filter: grayscale(1);
-    -webkit-transition: all .8s ease-in-out
+    -webkit-transform: scale(1.52);
+    /* -ms-transform: scale(1.02); */
+    /* transform: scale(1.02); */
+    /* opacity: .7; */
+    /* filter: gray; */
+    /* -webkit-filter: grayscale(1); */
+    /* -webkit-transition: all .8s ease-in-out */
 }
 
 .single_post .img-post:hover .social_share {
@@ -129,7 +135,7 @@ beforeDestroy () {
     line-height: 1;
     margin: 0 0 0 2em;
     padding: 0 0 0 2em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 13px
 }
 
@@ -145,7 +151,7 @@ beforeDestroy () {
 
 .single_post h3 {
     font-size: 20px;
-    text-transform: uppercase
+    /* text-transform: uppercase */
 }
 
 .single_post h3 a {

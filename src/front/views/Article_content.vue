@@ -9,13 +9,13 @@
                     <!-- <h3>A smart template that works 24/7 for your company</h3> -->
                     <ul class="post-meta list-inline">
                         <li class="list-inline-item">
-                            <i class="fa fa-user-circle-o"></i> <a href="#">John Doe</a>
+                            <i class="fa fa-user-circle-o"></i> <a >Andy</a>
                         </li>
                         <li class="list-inline-item">
-                            <i class="fa fa-calendar-o"></i> <a href="#">{{Article_content_data[0].date_article_titlepage}}</a>
+                            <i class="fa fa-calendar-o"></i> <a >{{Article_content_data[0].date_article_titlepage}}</a>
                         </li>
                         <li class="list-inline-item">
-                            <i class="fa fa-tags"></i> <a href="#">{{Article_content_data[0].Name}}</a>
+                            <i class="fa fa-tags"></i> <a >{{Article_content_data[0].Name}}</a>
                         </li>
                     </ul>
                     <div class="ql-editor" v-html="Article_content_data[0].content_article">
@@ -46,14 +46,19 @@
                         </li>
                     </ul> -->
                     <hr class="mb40">
-                    <h4 class="mb40 text-uppercase font500">關於作者</h4>
+                    <h4 class="mb40 text-uppercase font500" style="font-weight:bold;">關於作者</h4>
                     <div class="media mb40">
                         <!-- <i class="d-flex mr-3 fa fa-user-circle fa-5x text-primary"></i> -->
                         <div class="avatar mr-4">
-                               <img src="http://localhost:3000/images/yozhang.JPG" title="" alt="">
+                               <img src="https://andyblog.tw:3000/images/yozhang.JPG" title="" alt="">
                          </div>
                         <div class="media-body">
-                            <h5 class="mt-0 font700">Andy</h5> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            <h4 class="mt-0 font700 "  style="font-weight:bold;">Andy</h4>
+                            大家好，我是位熱愛程式的網頁工程師，我在這裡會陸續推出一些網頁開發文章。
+                            <br>
+                            如果有任何問題，也歡迎留言或是寫信與我討論哦 :D
+                            <br>
+                            Email : wwee123096@gmail.com
                         </div>
                     </div>
                     <!-- <hr class="mb40"> -->
@@ -188,7 +193,12 @@ export default {
                   type_article_titlepage:"Normal"  //傳入參數Normal，取得正常的blog封面
               },
               Article_content_data:null,
-              Article_Title_TopNews:[]
+              Article_Title_TopNews:[],
+              Clientip:{
+                IpAddress:null,
+                article_titlepage_id:null,
+                UserDate:null
+            }
         }
     },
     created: function(){
@@ -196,6 +206,16 @@ export default {
             article_titlepage_id:sessionStorage.getItem('article_titlepage_id')
         }
         console.log(data)
+        fetch('https://api.ipify.org?format=json')
+            .then(x => x.json().then(res=>{
+                 var Today =    new Date()
+                 this.Clientip.IpAddress = res.ip
+                 this.Clientip.article_titlepage_id = data.article_titlepage_id
+                 this.Clientip.UserDate = `${Today.getFullYear()}/${Today.getMonth()+1}/${Today.getDate()}${' '}${Today.getHours()}:${Today.getMinutes()}`
+                 this.FunctionToken(this.apiInsertClientIpFun,this.Clientip)
+                 
+            }))
+        
         this.FunctionToken(this.apiGetArticleContentFun,data)
         this.FunctionToken(this.apiGetArticleTitleFun,this.type_article_titlepage_Data)
         this.FunctionToken(this.apiGetTagFun,{Type:"Tag"})
@@ -214,17 +234,23 @@ export default {
         // })
     },
     methods:{
+         apiInsertClientIpFun:function(data_in){
+          this.apiInsertClientIp(data_in)
+          .then(res=>{
+              console.log(res)
+          })
+          .catch(err=>{console.log(err)})
+      },
         apiGetTopArtitcle_TitleNewFun:function(data){
             console.log(data)
             this.apiGetTopArtitcle_TitleNew(data)
             .then(res=>{
-               // alert("dd")
                 console.log(res)
                 if(res.data.Status){
                     this.Article_Title_TopNews = res.data.Data
                 }
                 else{
-                    console.log("請聯絡管理元")
+                    console.log("請聯絡管理員")
                 }
             })
             .catch(err=>{

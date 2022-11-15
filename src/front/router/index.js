@@ -7,8 +7,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'PostLog',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PostLog.vue'),
+
   },
   {
     path: '/about',

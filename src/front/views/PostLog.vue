@@ -23,7 +23,7 @@
                             <div class="media align-items-center">
                                 <div class="avatar">
                                     <!-- <img src="https://bootdey.com/img/Content/avatar/avatar6.png" title="" alt=""> -->
-                                    <img src="http://localhost:3000/images/yozhang.JPG" title="" alt="">
+                                    <img src="https://andyblog.tw:3000/images/yozhang.JPG" title="" alt="">
 
                                 </div>
                                 <div class="media-body">
@@ -31,9 +31,9 @@
                                 </div>
                             </div>
                             <!-- <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores</p> -->
-                            <p>大家好，我是位熱愛程式的網頁工程師，我在這裡會陸續推出一些還網頁開發文章。</p>
+                            <p>大家好，我是位熱愛程式的網頁工程師，我在這裡會陸續推出一些網頁開發文章。</p>
                             <!-- <br> -->
-                            <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores</p>
+                            <p>Hello everyone, I am a web developer who loves to develop web pages. I will release some articles on web development by engineers and web pages one after another.</p>
                             <span class="fa fa-envelope">&ensp;wwee123096@gmail.com</span>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                                 <button @click="SearchTitle()" class="input-group-text"><i class="fa fa-search"></i></button>
                               <!-- <span @click="SearchTitle()" class="input-group-text"><i class="fa fa-search"></i></span> -->
                             </div>
-                            <input type="text" class="form-control" v-model="SearchData" placeholder="Search...">                                    
+                            <input type="text" class="form-control" v-model="SearchData" placeholder="文章搜尋...">                                    
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="header row ml-2">   
                         <img style="height:38px; width:38px;" src="../assets/ribbon.png"><h2 class="ml-2" style="color: #0992a4;">文章類別</h2>
                     </div>
-                    <TagTree class="ml-4" :TreeViewData2 = TreeViewData2 :TotalLogCardData="TotalLogCardData"></TagTree>
+                    <TagTree class="ml-4" :TreeViewData2 = TreeViewData2 :TotalLogCardData="TotalLogCardData"  ></TagTree>
                    <!-- <TagAtticle :TreeViewData2 = TreeViewData2 :TotalLogCardData="TotalLogCardData"></TagAtticle> -->
                     
                     <!-- <Teatree :roots="data">

@@ -388,7 +388,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a  class="nav-link active" href="/AdminEditor"> 
+                <a  class="nav-link active" href="./back.html#/AdminEditor"> 
                 <!-- <router-link to="/AdminEditor" class="nav-link active"  > 有待確認 -->
                   <i class="far fa-circle nav-icon"></i>
                   <p>Editors</p>
@@ -516,7 +516,7 @@
               </li>
               <li class="nav-item">
                 
-                <a href="/ProjectItem" class="nav-link">
+                <a href="./back.html#/ProjectItem" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Projects</p>
                 </a>

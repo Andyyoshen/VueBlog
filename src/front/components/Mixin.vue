@@ -16,7 +16,9 @@ export default {
       apiGetTag:(data) =>
       this.userRequest.post("/GetTag",data),
       apiGetTopArtitcle_TitleNew:(data) =>
-      this.userRequest.post("/GetTopArtitcle_TitleNew",data)
+      this.userRequest.post("/GetTopArtitcle_TitleNew",data),
+      apiInsertClientIp:(data) =>
+      this.userRequest.post("/InsertClientIp",data)
     };
   },
   mounted() {
